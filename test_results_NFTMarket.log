@@ -1,0 +1,45 @@
+No files changed, compilation skipped
+
+Ran 8 tests for test/NFTMarket.t.sol:NFTMarketTest
+[PASS] invariant_marketAlwaysZeroBalance() (runs: 256, calls: 128000, reverts: 100311)
+
+╭-----------+-----------------------------+-------+---------+----------╮
+| Contract  | Selector                    | Calls | Reverts | Discards |
++======================================================================+
+| MyERC20   | approve                     | 9149  | 18      | 0        |
+|-----------+-----------------------------+-------+---------+----------|
+| MyERC20   | transfer                    | 9257  | 9148    | 0        |
+|-----------+-----------------------------+-------+---------+----------|
+| MyERC20   | transferFrom                | 8950  | 8831    | 0        |
+|-----------+-----------------------------+-------+---------+----------|
+| MyERC20   | transferWithCallbackAndData | 9187  | 9064    | 0        |
+|-----------+-----------------------------+-------+---------+----------|
+| MyNFT     | approve                     | 9244  | 9244    | 0        |
+|-----------+-----------------------------+-------+---------+----------|
+| MyNFT     | mintNFT                     | 9122  | 17      | 0        |
+|-----------+-----------------------------+-------+---------+----------|
+| MyNFT     | safeTransferFrom            | 18495 | 18495   | 0        |
+|-----------+-----------------------------+-------+---------+----------|
+| MyNFT     | setApprovalForAll           | 9123  | 21      | 0        |
+|-----------+-----------------------------+-------+---------+----------|
+| MyNFT     | transferFrom                | 8943  | 8943    | 0        |
+|-----------+-----------------------------+-------+---------+----------|
+| NFTMarket | buyNFT                      | 9022  | 9022    | 0        |
+|-----------+-----------------------------+-------+---------+----------|
+| NFTMarket | cancellListing              | 9113  | 9113    | 0        |
+|-----------+-----------------------------+-------+---------+----------|
+| NFTMarket | list                        | 9243  | 9243    | 0        |
+|-----------+-----------------------------+-------+---------+----------|
+| NFTMarket | tokenReceived               | 9152  | 9152    | 0        |
+╰-----------+-----------------------------+-------+---------+----------╯
+
+[PASS] testFuzz_ListAndBuyNFT(uint256,address) (runs: 256, μ: 545061, ~: 545061)
+[PASS] test_BuyNFTSuccess() (gas: 568269)
+[PASS] test_BuyNFTWithInsufficientTokens() (gas: 554772)
+[PASS] test_BuyNFTWithOverpaidTokens() (gas: 554773)
+[PASS] test_BuySameNFTMultipleTimes() (gas: 559299)
+[PASS] test_BuySelfNFT() (gas: 551695)
+[PASS] test_ListNFT() (gas: 521235)
+Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 1.52s (1.64s CPU time)
+
+Ran 1 test suite in 1.52s (1.52s CPU time): 8 tests passed, 0 failed, 0 skipped (8 total tests)
