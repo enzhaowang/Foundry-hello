@@ -1,0 +1,10 @@
+No files changed, compilation skipped
+
+Ran 4 tests for test/Bank.t.sol:BankTest
+[PASS] test_Deposit() (gas: 74136)
+[PASS] test_NotAdminCannotWithdraw() (gas: 12714)
+[PASS] test_OnlyAdminCanWithdraw() (gas: 79445)
+[PASS] test_TopDepositors() (gas: 350082)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 529.46µs (405.58µs CPU time)
+
+Ran 1 test suite in 176.93ms (529.46µs CPU time): 4 tests passed, 0 failed, 0 skipped (4 total tests)
