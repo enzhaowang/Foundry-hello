@@ -6,7 +6,7 @@ import {MyToken} from "../src/MyToken.sol";
 
 contract DeployMyToken is Script {
     function run() external {
-        vm.startBroadcast(vm.envUint("PRIVATE_KEY"));
+        vm.startBroadcast(vm.envUint("SEPOLIA_PRIVATE_KEY"));
 
         new MyToken("My Token", "MTK");
 

@@ -1,19 +1,18 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.13;
+pragma solidity ^0.8.3;
 
 import {Script} from "forge-std/Script.sol";
-import {Counter} from "../src/Counter.sol";
+import {MyERC20} from "../../src/nft-market/MyERC20.sol";
 
-contract CounterScript is Script {
-    Counter public counter;
 
-    function setUp() public {}
+contract MyERC20Deploy is Script{
 
     function run() public {
         vm.startBroadcast(vm.envUint("PRIVATE_KEY"));
 
-        counter = new Counter();
+        new MyERC20(1000 * 10 ** 18);
 
         vm.stopBroadcast();
     }
+
 }
