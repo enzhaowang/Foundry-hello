@@ -10,5 +10,11 @@
       "name": "v5.4.0",
       "rev": "c64a1edb67b6e3f4a15cca8909c9482ad33a02b0"
     }
+  },
+  "lib/permit2-light-sdk": {
+    "tag": {
+      "name": "v0.0.1",
+      "rev": "6748f6258711196d69febfb27c41d061da2b6c17"
+    }
   }
 }
