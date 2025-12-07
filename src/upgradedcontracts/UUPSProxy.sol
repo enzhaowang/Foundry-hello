@@ -16,7 +16,7 @@ library StorageSlot {
 }
 
 contract Counter {
-    bytes32 private constant implSlot = bytes32(uint(keccak256("eip1967.proxy.implementation")) - 1);
+    bytes32 private constant IMPLEMENTATION_SLOT = bytes32(uint(keccak256("eip1967.proxy.implementation")) - 1);
 
     uint256 private counter;
 
@@ -42,7 +42,7 @@ contract Counter {
 
     function _setImplementation(address _impl) private {
         require(_impl.code.length > 0, "implementation is not contract");
-        StorageSlot.getAddressSlot(implSlot).value = _impl;
+        StorageSlot.getAddressSlot(IMPLEMENTATION_SLOT).value = _impl;
     }
 
 
@@ -70,6 +70,9 @@ contract CounterV2 {
 }
 
 contract UUPSProxy {
+    bytes32 private constant IMPLEMENTATION_SLOT =
+        bytes32(uint(keccak256("eip1967.proxy.implementation")) - 1);
+
     constructor() {
 
     }
@@ -101,7 +104,7 @@ contract UUPSProxy {
 
 
     function _getImplementation() private view returns(address){
-        return StorageSlot.getAddressSlot(implSlot).value;
+        return StorageSlot.getAddressSlot(IMPLEMENTATION_SLOT).value;
     }
 
 
